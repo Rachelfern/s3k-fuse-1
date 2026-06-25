@@ -1,0 +1,52 @@
+{
+  "name": "s3k-fuse",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "seed": "tsx lib/seed.ts",
+    "test:intents": "tsx scripts/verify-message-intent.mjs",
+    "test:hinglish": "tsx scripts/verify-hinglish-normalization.mjs",
+    "test:journeys": "tsx scripts/verify-customer-journeys.mjs",
+    "test:support-priority": "tsx scripts/verify-support-escalation-priority.mjs",
+    "test:conversation-context": "tsx scripts/verify-conversation-context.mjs",
+    "db:migrate:order-state-machine": "node scripts/apply-order-state-machine.mjs",
+    "db:migrate:upi-verification-pending": "node scripts/apply-upi-verification-pending.mjs",
+    "db:migrate:dpdp-consent": "node scripts/apply-dpdp-consent.mjs",
+    "db:migrate:dpdp-deletion-completed": "node scripts/apply-dpdp-deletion-completed.mjs",
+    "db:migrate:payment-method": "node scripts/apply-payment-method.mjs",
+    "db:migrate:return-requests-support": "node scripts/apply-return-requests-support.mjs",
+    "db:migrate:support-escalation-priority": "node scripts/apply-support-escalation-priority.mjs"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.2",
+    "@supabase/ssr": "^0.12.0",
+    "@supabase/supabase-js": "^2.108.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.475.0",
+    "next": "^15.5.0",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.9",
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "dotenv": "^16.6.1",
+    "eslint": "^9.21.0",
+    "eslint-config-next": "^15.2.4",
+    "pg": "^8.22.0",
+    "playwright": "^1.49.1",
+    "tailwindcss": "^4.0.9",
+    "tsx": "^4.22.4",
+    "typescript": "^5.8.2"
+  }
+}
